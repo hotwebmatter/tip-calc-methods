@@ -1,4 +1,5 @@
 ﻿using System;
+using static System.Console;
 
 namespace tip_calc_methods
 {
@@ -6,7 +7,7 @@ namespace tip_calc_methods
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            WriteLine("Hello World!");
         }
     }
 }
