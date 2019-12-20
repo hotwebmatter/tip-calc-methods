@@ -38,5 +38,23 @@ namespace tip_calc_methods
             }
             return number;
         }
+
+        static void CalculateTax()
+        {
+            taxAmount = billPreTax * TAX_PERCENT;
+            billPostTax = billPreTax + taxAmount;
+        }
+        static void CalculateLowTip()
+        {
+            // per spec, though tip is generally calculated pre-tax
+            lowTip = billPostTax * LOW_TIP_PERCENT;
+            billTotalWithLowTip = billPostTax + lowTip;
+        }
+        static void CalculateHighTip()
+        {
+            // per spec, though tip is generally calculated pre-tax
+            highTip = billPostTax * HIGH_TIP_PERCENT;
+            billTotalWithHighTip = billPostTax + highTip;
+        }
     }
 }
