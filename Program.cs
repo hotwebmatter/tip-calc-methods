@@ -24,6 +24,9 @@ namespace tip_calc_methods
             WriteLine("{0, 20} {1, 15:P0}", "Low Tip Percentage:", LOW_TIP_PERCENT);
             WriteLine("{0, 20} {1, 15:P0}", "High Tip Percentage:", HIGH_TIP_PERCENT);
             billPreTax = ReadDouble("Please enter bill amount (pre-tax):");
+            CalculateTax();
+            CalculateLowTip();
+            CalculateHighTip();
         }
 
         static double ReadDouble(string label)
