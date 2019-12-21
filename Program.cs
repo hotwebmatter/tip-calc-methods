@@ -59,10 +59,21 @@ namespace tip_calc_methods
         }
         static string DisplayResults()
         {
-            string results = String.Format("{0, 20}{1, 15:P0}\n", "Tax Percentage:", TAX_PERCENT);
-            results += String.Format("{0, 20}{1, 15:P0}\n", "Low Tip Percentage:", LOW_TIP_PERCENT);
-            results += String.Format("{0, 20}{1, 15:P0}\n", "High Tip Percentage:", HIGH_TIP_PERCENT);
-            return results;
+            string result = String.Format("\n****** Tip Calculator Constants ******\n");
+            result += String.Format("* {0, 20}{1, 14:P0} *\n", "Tax Percentage:", TAX_PERCENT);
+            result += String.Format("* {0, 20}{1, 14:P0} *\n", "Low Tip Percentage:", LOW_TIP_PERCENT);
+            result += String.Format("* {0, 20}{1, 14:P0} *\n", "High Tip Percentage:", HIGH_TIP_PERCENT);
+            result += String.Format("**************************************\n\n");
+            result += String.Format("****** Tip Calculator Variables ******\n");
+            result += String.Format("* {0, 20}{1, 14:C2} *\n", "Bill Total Pre-Tax:", billPreTax);
+            result += String.Format("* {0, 20}{1, 14:C2} *\n", "Tax Amount:", taxAmount);
+            result += String.Format("* {0, 20}{1, 14:C2} *\n", "Bill Total Post-Tax:", billPostTax);
+            result += String.Format("* {0, 20}{1, 14:C2} *\n", "Low Tip:", lowTip);
+            result += String.Format("* {0, 20}{1, 14:C2} *\n", "Total (Low Tip):", billTotalWithLowTip);
+            result += String.Format("* {0, 20}{1, 14:C2} *\n", "High Tip:", highTip);
+            result += String.Format("* {0, 20}{1, 14:C2} *\n", "Total (High Tip):", billTotalWithHighTip);
+            result += String.Format("**************************************\n");
+            return result;
         }
     }
 }
