@@ -20,13 +20,11 @@ namespace tip_calc_methods
                       billTotalWithHighTip;
         static void Main(string[] args)
         {
-            WriteLine("{0, 20} {1, 15:P0}", "Tax Percentage:", TAX_PERCENT);
-            WriteLine("{0, 20} {1, 15:P0}", "Low Tip Percentage:", LOW_TIP_PERCENT);
-            WriteLine("{0, 20} {1, 15:P0}", "High Tip Percentage:", HIGH_TIP_PERCENT);
             billPreTax = ReadDouble("Please enter bill amount (pre-tax):");
             CalculateTax();
             CalculateLowTip();
             CalculateHighTip();
+            WriteLine(DisplayResults());
         }
 
         static double ReadDouble(string label)
@@ -58,6 +56,13 @@ namespace tip_calc_methods
             // per spec, though tip is generally calculated pre-tax
             highTip = billPostTax * HIGH_TIP_PERCENT;
             billTotalWithHighTip = billPostTax + highTip;
+        }
+        static string DisplayResults()
+        {
+            string results = String.Format("{0, 20}{1, 15:P0}\n", "Tax Percentage:", TAX_PERCENT);
+            results += String.Format("{0, 20}{1, 15:P0}\n", "Low Tip Percentage:", LOW_TIP_PERCENT);
+            results += String.Format("{0, 20}{1, 15:P0}\n", "High Tip Percentage:", HIGH_TIP_PERCENT);
+            return results;
         }
     }
 }
